@@ -44,4 +44,18 @@ class TaskController extends Controller
         }
         return response()->json(['status' => 'success', 'message' => 'Success']);
     }
+    public function update_task_order (Request $request){
+
+
+        $id_array = request()->all();
+
+
+        foreach ($id_array as $key => $id) {
+            Task::where('id', $id)->update([
+                'order' => $key,
+            ]);
+        }
+
+        return response()->json(['status' => 'success', 'message' => 'Success']);
+    }
 }

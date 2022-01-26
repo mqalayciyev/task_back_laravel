@@ -28,6 +28,7 @@ Route::namespace('API')->group(function () {
 
         Route::get('/load-board', 'BoardController@load');
         Route::post('/add-update-task', 'TaskController@add_update_task');
+        Route::post('/update-task-order', 'TaskController@update_task_order');
         Route::post('/add-update-board', 'BoardController@add_update_board');
 
         Route::get('/control', 'LoginController@control');
